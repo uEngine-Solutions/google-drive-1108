@@ -12,6 +12,11 @@ public class FileHateoasProcessor implements RepresentationModelProcessor<Entity
     @Override
     public EntityModel<File> process(EntityModel<File> model) {
 
+        model.add(
+            Link.of("/videos/search/findByFileId?id=" + model.getContent().getId())
+            .withRel("video")
+        );
+        
         
         return model;
     }

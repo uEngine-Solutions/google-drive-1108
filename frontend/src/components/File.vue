@@ -20,6 +20,8 @@
             <String label="Name" v-model="value.name" :editMode="editMode"/>
             <String label="Type" v-model="value.type" :editMode="editMode"/>
             <Number label="Size" v-model="value.size" :editMode="editMode"/>
+
+            <Video v-model="video"></Video>
         </v-card-text>
 
         <v-card-actions>
@@ -96,7 +98,12 @@
                 timeout: 5000,
                 text: ''
             },
+            video: null
         }),
+        async created() {
+            var result = await axios.get(this.value._links.video.href);
+            this.video = result.data;
+        },
         computed:{
         },
         methods: {

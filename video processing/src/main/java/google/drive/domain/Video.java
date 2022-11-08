@@ -52,4 +52,22 @@ public class Video  {
     }
 
 
+    public static void deleteVideo(FileDeleted fileDeleted){
+
+
+        /** Example 2:  finding and process        */
+        
+        repository().findByFileId(fileDeleted.getId()).ifPresent(video->{
+            
+            repository().delete(video);
+
+
+         });
+
+
+        
+    }
+
+
+
 }

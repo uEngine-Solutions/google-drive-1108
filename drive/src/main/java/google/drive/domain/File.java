@@ -50,6 +50,16 @@ public class File  {
 
     }
 
+    @PreRemove
+    public void onPreRemove(){
+
+
+        FileDeleted fileDeleted = new FileDeleted(this);
+        fileDeleted.publishAfterCommit();
+
+    }
+
+
     public static FileRepository repository(){
         FileRepository fileRepository = DriveApplication.applicationContext.getBean(FileRepository.class);
         return fileRepository;
