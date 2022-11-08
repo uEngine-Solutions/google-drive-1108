@@ -5,6 +5,8 @@ import google.drive.IndexerApplication;
 import javax.persistence.*;
 import java.util.List;
 import lombok.Data;
+
+import java.util.Arrays;
 import java.util.Date;
 
 @Entity
@@ -18,9 +20,14 @@ public class Index  {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
+    
+    
     private Long fileId;
     
-    @ElementCollection    
+    
+    
+    @ElementCollection
+    
     private List<String> keywords;
 
     @PostPersist
@@ -46,7 +53,8 @@ public class Index  {
 
         Index index = new Index();
 
-        index.setKeywords(fileUploaded.get);
+        index.setKeywords(Arrays.asList(fileUploaded.getName().split(" ")));
+        index.setFileId(fileUploaded.getId());
 
         repository().save(index);
 
