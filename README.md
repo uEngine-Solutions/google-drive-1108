@@ -47,9 +47,11 @@ mvn spring-boot:run
 ```
 - video processing
 ```
+ http :8088/videos id="id" fileId="fileId" url="url" 
 ```
 - notification
 ```
+ http :8088/notificationHistories id="id" message="message" userId="userId" 
 ```
 
 

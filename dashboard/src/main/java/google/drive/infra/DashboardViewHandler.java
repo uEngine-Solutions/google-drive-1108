@@ -31,6 +31,7 @@ public class DashboardViewHandler {
             dashboard.setType(fileUploaded.getType());
             dashboard.setSize(String.valueOf(fileUploaded.getSize()));
             dashboard.setIsUploaded(true);
+            dashboard.setId(fileUploaded.getId());
             // view 레파지 토리에 save
             dashboardRepository.save(dashboard);
 

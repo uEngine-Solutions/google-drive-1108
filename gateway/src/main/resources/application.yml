@@ -11,7 +11,7 @@ spring:
         - id: dashboard
           uri: http://localhost:8081
           predicates:
-            - Path=, 
+            - Path=, /dashboards/**
         - id: drive
           uri: http://localhost:8082
           predicates:
@@ -23,11 +23,11 @@ spring:
         - id: video processing
           uri: http://localhost:8084
           predicates:
-            - Path=, 
+            - Path=/videos/**, 
         - id: notification
           uri: http://localhost:8085
           predicates:
-            - Path=, 
+            - Path=/notificationHistories/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -54,7 +54,7 @@ spring:
         - id: dashboard
           uri: http://dashboard:8080
           predicates:
-            - Path=, 
+            - Path=, /dashboards/**
         - id: drive
           uri: http://drive:8080
           predicates:
@@ -66,11 +66,11 @@ spring:
         - id: video processing
           uri: http://videoProcessing:8080
           predicates:
-            - Path=, 
+            - Path=/videos/**, 
         - id: notification
           uri: http://notification:8080
           predicates:
-            - Path=, 
+            - Path=/notificationHistories/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

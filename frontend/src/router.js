@@ -6,13 +6,19 @@ Vue.use(Router);
 
 
 
+import DashboardView from "./components/DashboardView"
+import DashboardViewDetail from "./components/DashboardViewDetail"
 import FileManager from "./components/listers/FileCards"
 import FileDetail from "./components/listers/FileDetail"
 
 import IndexManager from "./components/listers/IndexCards"
 import IndexDetail from "./components/listers/IndexDetail"
 
+import VideoManager from "./components/listers/VideoCards"
+import VideoDetail from "./components/listers/VideoDetail"
 
+import NotificationHistoryManager from "./components/listers/NotificationHistoryCards"
+import NotificationHistoryDetail from "./components/listers/NotificationHistoryDetail"
 
 
 export default new Router({
@@ -20,6 +26,16 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
 
+            {
+                path: '/dashboards',
+                name: 'DashboardView',
+                component: DashboardView
+            },
+            {
+                path: '/dashboards/:id',
+                name: 'DashboardViewDetail',
+                component: DashboardViewDetail
+            },
             {
                 path: '/files',
                 name: 'FileManager',
@@ -42,7 +58,27 @@ export default new Router({
                 component: IndexDetail
             },
 
+            {
+                path: '/videos',
+                name: 'VideoManager',
+                component: VideoManager
+            },
+            {
+                path: '/videos/:id',
+                name: 'VideoDetail',
+                component: VideoDetail
+            },
 
+            {
+                path: '/notificationHistories',
+                name: 'NotificationHistoryManager',
+                component: NotificationHistoryManager
+            },
+            {
+                path: '/notificationHistories/:id',
+                name: 'NotificationHistoryDetail',
+                component: NotificationHistoryDetail
+            },
 
 
 
