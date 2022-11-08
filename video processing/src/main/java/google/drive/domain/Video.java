@@ -10,34 +10,18 @@ import java.util.Date;
 @Entity
 @Table(name="Video_table")
 @Data
-
 public class Video  {
-
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long id;
     
-    
-    
-    
-    
     private Long fileId;
-    
-    
-    
-    
     
     private String url;
 
     @PostPersist
     public void onPostPersist(){
-
 
         VideoProcessed videoProcessed = new VideoProcessed(this);
         videoProcessed.publishAfterCommit();
@@ -54,23 +38,16 @@ public class Video  {
 
     public static void processVideo(FileUploaded fileUploaded){
 
-        /** Example 1:  new item 
-        Video video = new Video();
-        repository().save(video);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(fileUploaded.get???()).ifPresent(video->{
+        if("movie".equals(fileUploaded.getType())){
+            Video video = new Video();
             
-            video // do something
+            video.setFileId(fileUploaded.getId());
+            //////// video processing //////
+            video.setUrl("http://youtube.com/"+fileUploaded.getId());
+
             repository().save(video);
 
-
-         });
-        */
-
+        }
         
     }
 
