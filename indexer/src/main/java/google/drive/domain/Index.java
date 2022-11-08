@@ -16,12 +16,12 @@ public class Index  {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
     private Long id;
+    
+    private Long fileId;
+    
+    @ElementCollection    
+    private List<String> keywords;
 
     @PostPersist
     public void onPostPersist(){
@@ -42,11 +42,14 @@ public class Index  {
 
     public static void makeIndex(FileUploaded fileUploaded){
 
-        /** Example 1:  new item 
+        /** Example 1:  new item         */
+
         Index index = new Index();
+
+        index.setKeywords(fileUploaded.get);
+
         repository().save(index);
 
-        */
 
         /** Example 2:  finding and process
         
