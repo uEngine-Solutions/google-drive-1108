@@ -43,7 +43,7 @@ mvn spring-boot:run
 ```
 - indexer
 ```
- http :8088/indices id="id" 
+ http :8088/indices id="id" fileId="fileId" keywords="keywords" 
 ```
 - video processing
 ```

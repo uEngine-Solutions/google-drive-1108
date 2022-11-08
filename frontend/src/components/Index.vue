@@ -17,6 +17,8 @@
         </v-card-title >
 
         <v-card-text>
+            <Number label="FileId" v-model="value.fileId" :editMode="editMode"/>
+            <String label="Keywords" v-model="value.keywords" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>

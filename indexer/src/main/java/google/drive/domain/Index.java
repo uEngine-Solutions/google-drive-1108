@@ -22,6 +22,18 @@ public class Index  {
     
     
     private Long id;
+    
+    
+    
+    
+    
+    private Long fileId;
+    
+    
+    
+    @ElementCollection
+    
+    private List<String> keywords;
 
     @PostPersist
     public void onPostPersist(){
