@@ -11,6 +11,7 @@ const typeDefs = gql`
 			name: String 
 			type: String 
 			size: Long
+      video: Video
     }
     type Index {
     	id: Long! 

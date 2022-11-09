@@ -1,6 +1,14 @@
 const resolvers = {
     File: {
-        video: 
+        video: async (root, {fileId}, {dataSources}) => {
+            var parseLink = root._links.self.href.split('/')
+            fileId = parseLink[parseLink.length - 1]
+
+            if (productId) {
+                return await dataSources.videoProcessingRestApi.findByFileId(fileId);
+            }
+            return null;
+        }
     },
     Index: {
         // set Query

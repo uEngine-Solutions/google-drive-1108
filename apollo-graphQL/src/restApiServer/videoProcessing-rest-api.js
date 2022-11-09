@@ -25,6 +25,14 @@ class videoProcessingRestApi extends RESTDataSource {
         return value;
     }
 
+    // GET
+    // async findByFileId(id) {
+    //     const data = await this.get(`/videos/search/findByFileId?id=${id}`, {})
+    //     var value = this.stringToJson(data);
+    //     return value;
+    // }
+
+
     stringToJson(str){
         if(typeof str == 'string'){
             str = JSON.parse(str);
