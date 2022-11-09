@@ -61,9 +61,6 @@ public class File  {
         fileDeleted.publishAfterCommit();
 
     }
-    @PreRemove
-    public void onPreRemove(){
-    }
 
     @PreRemove
     public void onPreRemove(){

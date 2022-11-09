@@ -1,16 +1,16 @@
 const resolvers = {
     File: {
-        // set Query
-    }
+        video: 
+    },
     Index: {
         // set Query
-    }
+    },
     Video: {
         // set Query
-    }
+    },
     NotificationHistory: {
         // set Query
-    }
+    },
 
     Query: {
         file : async (_, { id }, { dataSources }) => {
